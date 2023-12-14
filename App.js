@@ -1,22 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+import inicial from 'Ppdm-2023/src/screens/inicial.js';
+import cadastro from 'Ppdm-2023/src/screens/cadastro.js';
+import home from 'Ppdm-2023/src/screens/home.js';
+import { NavigationContainer } from "@react-navigation/native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text> ef3o47y38tr9w4h5t89gw4y5t9hw495h8t49u5t ;)</Text>
-      <Text>BROOKLYN NETS ;</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function navegacao() {
+    var Stack = createStackNavigator()
+    return(
+      <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="inicial"component={inicial}
+            options={{headerShown: false}}/>
+            <Stack.Screen name="login"component={login}
+            options={{headerShown: false}}/>
+            <Stack.Screen name="cadastro"component={cadastro}
+            options={{headerShown: false}}/>
+            <Stack.Screen name="home"component={home}
+            options={{headerShown: false}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+        
+        )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
